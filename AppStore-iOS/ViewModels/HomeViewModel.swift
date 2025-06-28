@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import AppStore
+
+@Observable
+class HomeViewModel {
+    
+    var apps: [ApplicationDTO] = []
+    
+    func fetch() {
+        
+    }
+    
+    
+}
