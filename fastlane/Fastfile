@@ -17,7 +17,14 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  lane :run_appstore_build do
+    gym(
+        project: "AppStore-iOS.xcodeproj", #get from scheme name near run button
+        configuration: "Debug", # or staging or release config file
+        scheme: "AppStore-iOS",
+        silent: true,
+        clean: true, #// clean and build
+        skip_archive: true, 
+    )
   end
 end
